@@ -1,0 +1,34 @@
+﻿@model Animals.Models.LoginModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <html>
+    <head runat="server">
+        <title>Record</title>
+    </head>
+    <body bgcolor="#ff80ff">
+        <div>
+            <h2>Details</h2>
+            <fieldset>
+                <legend>Display Fields</legend>
+                <p>
+                    Username:
+                    @Html.Encode(Model.Username)
+                </p>
+                <p>
+                    Password:
+                    @Html.Encode(Model.Password)
+                </p>
+                <p>
+                    Email:
+                    @Html.Encode(Model.Email)
+                </p>
+            </fieldset>
+            <p>
+                @Html.ActionLink("Back to List", "Index") 
+            </p>
+        </div>
+    </body>
+    </html>

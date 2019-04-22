@@ -1,0 +1,39 @@
+﻿@model Animals.Models.LoginModels
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<html>
+<head runat="server">
+    <title>Login</title>
+</head>
+<body bgcolor="#ff80c0">
+    <div>
+        <h2>Login</h2>
+        @Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.")
+        @using (Html.BeginForm())
+        {
+        <fieldset>
+            <legend>Fields</legend>
+            <p>
+                <label for="UserName">UserName:</label>
+               @Html.TextBox("UserName")
+               @Html.ValidationMessage("Id", "*")
+            </p>
+            <p>
+                <label for="Password">Password:</label>
+                @Html.Password("*")
+                @Html.ValidationMessage("Password", "*")
+            </p>
+            <p>
+                <input type="submit" value="Login" />
+            </p>
+        </fieldset>
+        }
+        <div>
+            @Html.ActionLink("Chưa có tài khoản, tạo mới", "Create", "CreateUser")
+        </div>
+    </div>
+</body>
+</html>
